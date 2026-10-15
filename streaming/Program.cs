@@ -4,7 +4,7 @@ double percentualeN20, mediaSpettatori,totMediaSpettatori=0, mediaOre, mediaFoll
 
 for (int i = 0; i < 12; i++)
 {
-    Console.WriteLine("inserire il numero di ore trasemsse");
+    Console.WriteLine("inserire il numero di ore trasmesse");
     nOre = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("inserire il numero medio di spettatori");
     mediaSpettatori = Convert.ToInt32(Console.ReadLine());
@@ -16,7 +16,6 @@ for (int i = 0; i < 12; i++)
     sommaOre = sommaOre + nOre;
     sommaFollower = sommaFollower + nFollower;
     sommaDirette = sommaDirette + nDirette;
-    sommaFollower = sommaFollower / nFollower;
     totMediaSpettatori = totMediaSpettatori + mediaSpettatori;
     
 
@@ -56,9 +55,9 @@ totDirette = totDirette + sommaDirette;
 totN30 = totN30 + n30;
 totN20 = totN20 + n20;
 totN1000 = totN1000 + n1000;
-mediaFollower = sommaFollower / totFollower * 100;
-percentualeN20 = totN20 / totOre * 100;
-mediaOre = totOre / 12 * 100;
+mediaFollower = (double) sommaFollower / totFollower * 100;
+percentualeN20 = (double) totN20 / totOre * 100;
+mediaOre = (double) totOre / 12 * 100;
 Console.WriteLine("Il totale delle ore è" + totOre);
 Console.WriteLine("Il totale dei nuovi follower è" + totFollower);
 Console.WriteLine("Il totale delle dirette è" + totDirette);
