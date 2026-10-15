@@ -1,12 +1,9 @@
 ﻿
 int nOre,totN30=0, totN20=0, totN1000=0, n20=0, sommaFollower=0, nFollower, nDirette, totOre=0, totFollower=0, totDirette=0, n30=0, n1000=0, sommaOre=0, sommaDirette=0;
 double percentualeN20, mediaSpettatori,totMediaSpettatori=0, mediaOre, mediaFollower;
-string nome;
 
 for (int i = 0; i < 12; i++)
 {
-    Console.WriteLine("inserire il nome");
-    nome = Console.ReadLine();
     Console.WriteLine("inserire il numero di ore trasemsse");
     nOre = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("inserire il numero medio di spettatori");
@@ -19,11 +16,8 @@ for (int i = 0; i < 12; i++)
     sommaOre = sommaOre + nOre;
     sommaFollower = sommaFollower + nFollower;
     sommaDirette = sommaDirette + nDirette;
-    mediaOre = sommaOre / nDirette * 100;
     sommaFollower = sommaFollower / nFollower;
     totMediaSpettatori = totMediaSpettatori + mediaSpettatori;
-
-    Console.WriteLine("La media delle ore trasmesse è" + mediaOre);
     
 
     if (nOre >= 30)
@@ -63,7 +57,8 @@ totN30 = totN30 + n30;
 totN20 = totN20 + n20;
 totN1000 = totN1000 + n1000;
 mediaFollower = sommaFollower / totFollower * 100;
-percentualeN20 = totN20 / totOre * 100; 
+percentualeN20 = totN20 / totOre * 100;
+mediaOre = totOre / 12 * 100;
 Console.WriteLine("Il totale delle ore è" + totOre);
 Console.WriteLine("Il totale dei nuovi follower è" + totFollower);
 Console.WriteLine("Il totale delle dirette è" + totDirette);
@@ -71,6 +66,7 @@ Console.WriteLine("Il numero di creator che hanno trasmesso almeno 30 ore è" + 
 Console.WriteLine("Il numero di creator che hanno ottenuto almeno 1000 nuovi follower è" + totN1000);
 Console.WriteLine("La media dei nuovi follower è" + mediaFollower);
 Console.WriteLine("La percentuale deri creator che hanno trasmesso almeno 20 ore è" + percentualeN20 + percentualeN20);
+Console.WriteLine("La media delle ore trasmesse per creator è" + mediaOre);
 
 if (totMediaSpettatori > 1500)
 {
